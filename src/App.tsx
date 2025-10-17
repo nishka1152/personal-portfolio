@@ -1,15 +1,25 @@
-import { useState } from "react";
+import * as React from "react"
 
-function App() {
-  const [count, setCount] = useState(0);
+import { ScrollArea } from "../components/ui/scroll-area"
+import { Separator } from "../components/ui/separator"
 
+const tags = Array.from({ length: 50 }).map(
+  (_, i, a) => `v1.2.0-beta.${a.length - i}`
+)
+
+export function ScrollAreaDemo() {
   return (
-    <main className="flex flex-col items-center gap-8 py-16 max-w-[1280px] mx-auto">
-      <h1 className="text-4xl font-bold">Hello React & Tailwind!</h1>
-      <div className="flex flex-row items-center gap-6">
+    <ScrollArea className="h-72 w-48 rounded-md border">
+      <div className="p-4">
+        <h4 className="mb-4 text-sm leading-none font-medium">Tags</h4>
+        {tags.map((tag) => (
+          <React.Fragment key={tag}>
+            <div className="text-sm">{tag}</div>
+            <Separator className="my-2" />
+          </React.Fragment>
+        ))}
       </div>
-    </main>
-  );
+    </ScrollArea>
+  )
 }
-
-export default App;
+export default ScrollAreaDemo;
