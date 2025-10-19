@@ -1,11 +1,9 @@
 import React from 'react';
-import { Code, Palette, Database, Smartphone, Globe, Zap } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: 'Frontend Development',
-      icon: <Code size={24} />,
       skills: [
         { name: 'React', level: 90 },
         { name: 'TypeScript', level: 85 },
@@ -17,7 +15,6 @@ const Skills = () => {
     },
     {
       title: 'Backend Development',
-      icon: <Database size={24} />,
       skills: [
         { name: 'Node.js', level: 85 },
         { name: 'Express.js', level: 80 },
@@ -29,7 +26,6 @@ const Skills = () => {
     },
     {
       title: 'UI/UX Design',
-      icon: <Palette size={24} />,
       skills: [
         { name: 'Figma', level: 90 },
         { name: 'Adobe XD', level: 80 },
@@ -41,7 +37,6 @@ const Skills = () => {
     },
     {
       title: 'Mobile Development',
-      icon: <Smartphone size={24} />,
       skills: [
         { name: 'React Native', level: 80 },
         { name: 'Flutter', level: 70 },
@@ -53,7 +48,6 @@ const Skills = () => {
     },
     {
       title: 'DevOps & Tools',
-      icon: <Zap size={24} />,
       skills: [
         { name: 'Git', level: 90 },
         { name: 'Docker', level: 75 },
@@ -65,7 +59,6 @@ const Skills = () => {
     },
     {
       title: 'Web Technologies',
-      icon: <Globe size={24} />,
       skills: [
         { name: 'HTML5', level: 95 },
         { name: 'CSS3', level: 90 },
@@ -78,16 +71,15 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">
               Skills & Technologies
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               A comprehensive overview of my technical expertise and the tools I use to bring ideas to life
             </p>
           </div>
@@ -97,31 +89,26 @@ const Skills = () => {
             {skillCategories.map((category, categoryIndex) => (
               <div
                 key={categoryIndex}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-gray-50 rounded-lg p-6 border"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white">
-                    {category.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    {category.title}
-                  </h3>
-                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">
+                  {category.title}
+                </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-700 font-medium">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-gray-700 text-sm">
                           {skill.name}
                         </span>
-                        <span className="text-gray-500 text-sm">
+                        <span className="text-gray-500 text-xs">
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-1">
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                          className="bg-gray-900 h-1 rounded-full transition-all duration-1000 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
@@ -133,12 +120,12 @@ const Skills = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="mt-12 text-center">
+            <div className="bg-gray-50 rounded-lg p-6 border max-w-3xl mx-auto">
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
                 Always Learning
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, 
                 tools, and methodologies to stay at the forefront of web development. Currently 
                 diving deep into AI/ML integration, Web3 technologies, and advanced performance optimization.

@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, MapPin, Calendar, Award } from 'lucide-react';
+import { User, MapPin, Calendar } from 'lucide-react';
 
 const About = () => {
   const stats = [
@@ -10,57 +10,51 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">
               About Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Get to know me better and discover what drives my passion for technology and design
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Image and Info */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Profile Image */}
-              <div className="relative">
-                <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-                  NJ
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                  <Award className="text-white" size={32} />
-                </div>
+              <div className="w-48 h-48 mx-auto rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 text-4xl font-medium">
+                NJ
               </div>
 
               {/* Personal Info */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-600">
-                  <User size={20} />
+                  <User size={16} />
                   <span>Full Stack Developer & Designer</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-600">
-                  <MapPin size={20} />
+                  <MapPin size={16} />
                   <span>Based in India</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-600">
-                  <Calendar size={20} />
+                  <Calendar size={16} />
                   <span>Available for freelance work</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column - Content */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-4">
                   Passionate Developer & Designer
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   I'm a creative and detail-oriented developer with a passion for building 
                   exceptional digital experiences. With expertise in both frontend and backend 
                   technologies, I love turning complex problems into simple, beautiful designs.
@@ -74,24 +68,17 @@ const About = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-6 bg-gray-50 rounded-xl">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                  <div key={index} className="text-center p-4 bg-white rounded border">
+                    <div className="text-2xl font-medium text-gray-900 mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-gray-600 font-medium">
+                    <div className="text-gray-600 text-sm">
                       {stat.label}
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* CTA */}
-              <div className="pt-4">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Let's Work Together
-                </button>
               </div>
             </div>
           </div>

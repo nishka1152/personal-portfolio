@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Eye, Code, Palette, Smartphone } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -9,67 +9,55 @@ const Projects = () => {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment integration, inventory management, and admin dashboard.',
-      image: '/api/placeholder/600/400',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
       category: 'fullstack',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: true,
     },
     {
       id: 2,
       title: 'Task Management App',
       description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/api/placeholder/600/400',
       technologies: ['Vue.js', 'Socket.io', 'MongoDB', 'Express', 'Vuetify'],
       category: 'frontend',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: true,
     },
     {
       id: 3,
       title: 'Weather Dashboard',
       description: 'A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: '/api/placeholder/600/400',
       technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API', 'CSS3'],
       category: 'frontend',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: false,
     },
     {
       id: 4,
       title: 'Mobile Banking App',
       description: 'A secure mobile banking application with biometric authentication, transaction history, and real-time notifications.',
-      image: '/api/placeholder/600/400',
       technologies: ['React Native', 'Firebase', 'Redux', 'Biometric Auth', 'Push Notifications'],
       category: 'mobile',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: true,
     },
     {
       id: 5,
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website with smooth animations, dark mode, and optimized performance.',
-      image: '/api/placeholder/600/400',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript', 'Vercel'],
       category: 'frontend',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: false,
     },
     {
       id: 6,
       title: 'API Gateway Service',
       description: 'A microservices API gateway with authentication, rate limiting, and request routing capabilities.',
-      image: '/api/placeholder/600/400',
       technologies: ['Node.js', 'Express', 'Redis', 'JWT', 'Docker', 'AWS'],
       category: 'backend',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com',
-      featured: false,
     },
   ];
 
@@ -85,46 +73,30 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'frontend':
-        return <Code size={16} />;
-      case 'backend':
-        return <Code size={16} />;
-      case 'fullstack':
-        return <Code size={16} />;
-      case 'mobile':
-        return <Smartphone size={16} />;
-      default:
-        return <Palette size={16} />;
-    }
-  };
-
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">
               Featured Projects
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               A showcase of my recent work and projects that demonstrate my skills and passion for development
             </p>
           </div>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {filters.map((filter) => (
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
                   activeFilter === filter.key
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-100 border'
                 }`}
               >
                 {filter.label}
@@ -133,91 +105,60 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-6">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
-                  project.featured ? 'ring-2 ring-blue-500' : ''
-                }`}
+                className="bg-white rounded-lg p-6 border hover:border-gray-300 transition-colors"
               >
-                {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-80">
-                    {project.title.charAt(0)}
-                  </div>
-                  {project.featured && (
-                    <div className="absolute top-4 left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold">
-                      Featured
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center gap-4">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 p-3 rounded-full hover:bg-gray-100"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 p-3 rounded-full hover:bg-gray-100"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    {getCategoryIcon(project.category)}
-                    <span className="text-sm text-gray-500 capitalize">
-                      {project.category}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
-                      >
-                        {tech}
+                <div className="flex flex-col md:flex-row md:items-start gap-4">
+                  {/* Project Info */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs text-gray-500 uppercase tracking-wide">
+                        {project.category}
                       </span>
-                    ))}
+                    </div>
+                    
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 md:flex-col">
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-lg text-sm font-medium text-center hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"
                     >
-                      <Eye size={16} />
-                      Live Demo
+                      <ExternalLink size={14} />
+                      Live
                     </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium text-center hover:border-blue-600 hover:text-blue-600 transition-all duration-200 flex items-center justify-center gap-2"
+                      className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium hover:border-gray-400 transition-colors"
                     >
-                      <Github size={16} />
+                      <Github size={14} />
                       Code
                     </a>
                   </div>
@@ -227,8 +168,8 @@ const Projects = () => {
           </div>
 
           {/* View More Button */}
-          <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+          <div className="text-center mt-8">
+            <button className="bg-gray-900 text-white px-6 py-3 font-medium hover:bg-gray-800 transition-colors">
               View All Projects on GitHub
             </button>
           </div>

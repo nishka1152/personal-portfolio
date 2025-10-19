@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, Award, ExternalLink } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, Award } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -74,116 +74,101 @@ const Experience = () => {
       name: 'AWS Certified Solutions Architect',
       issuer: 'Amazon Web Services',
       date: '2023',
-      credential: 'AWS-CSA-001',
     },
     {
       id: 2,
       name: 'React Developer Certification',
       issuer: 'Meta',
       date: '2022',
-      credential: 'META-REACT-001',
     },
     {
       id: 3,
       name: 'Google UX Design Certificate',
       issuer: 'Google',
       date: '2021',
-      credential: 'GOOGLE-UX-001',
     },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">
               Experience & Education
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               My professional journey, education, and continuous learning in the world of technology
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="space-y-12">
             {/* Work Experience */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white">
-                  <Briefcase size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Work Experience</h3>
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase size={20} className="text-gray-600" />
+                <h3 className="text-xl font-medium text-gray-900">Work Experience</h3>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {experiences.map((exp, index) => (
-                  <div
-                    key={exp.id}
-                    className={`relative pl-8 pb-8 ${
-                      index !== experiences.length - 1 ? 'border-l-2 border-gray-200' : ''
-                    }`}
-                  >
-                    <div className="absolute -left-2 top-0 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-                    
-                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                        <div>
-                          <h4 className="text-xl font-bold text-gray-800 mb-1">
-                            {exp.title}
-                          </h4>
-                          <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2">
-                            {exp.company}
-                            {exp.current && (
-                              <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
-                                Current
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {exp.period}
+                  <div key={exp.id} className="bg-gray-50 rounded-lg p-6 border">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                      <div>
+                        <h4 className="text-lg font-medium text-gray-900 mb-1">
+                          {exp.title}
+                        </h4>
+                        <div className="flex items-center gap-2 text-gray-600 font-medium mb-2">
+                          {exp.company}
+                          {exp.current && (
+                            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                              Current
+                            </span>
+                          )}
                         </div>
                       </div>
-
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                        <div className="flex items-center gap-1">
-                          <MapPin size={16} />
-                          {exp.location}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar size={16} />
-                          {exp.type}
-                        </div>
+                      <div className="text-sm text-gray-500">
+                        {exp.period}
                       </div>
+                    </div>
 
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        {exp.description}
-                      </p>
-
-                      <div className="mb-4">
-                        <h5 className="font-semibold text-gray-800 mb-2">Key Achievements:</h5>
-                        <ul className="space-y-1">
-                          {exp.achievements.map((achievement, idx) => (
-                            <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
-                              <span className="text-blue-500 mt-1">•</span>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
+                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                      <div className="flex items-center gap-1">
+                        <MapPin size={14} />
+                        {exp.location}
                       </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar size={14} />
+                        {exp.type}
+                      </div>
+                    </div>
 
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
-                          >
-                            {tech}
-                          </span>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {exp.description}
+                    </p>
+
+                    <div className="mb-4">
+                      <h5 className="font-medium text-gray-900 mb-2 text-sm">Key Achievements:</h5>
+                      <ul className="space-y-1">
+                        {exp.achievements.map((achievement, idx) => (
+                          <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
+                            <span className="text-gray-400 mt-1">•</span>
+                            {achievement}
+                          </li>
                         ))}
-                      </div>
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 bg-white text-gray-700 text-xs rounded border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -191,36 +176,34 @@ const Experience = () => {
             </div>
 
             {/* Education & Certifications */}
-            <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {/* Education */}
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-green-500 to-blue-600 rounded-xl text-white">
-                    <Award size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800">Education</h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <Award size={20} className="text-gray-600" />
+                  <h3 className="text-lg font-medium text-gray-900">Education</h3>
                 </div>
 
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <div className="bg-gray-50 rounded-lg p-4 border">
                   {education.map((edu) => (
                     <div key={edu.id}>
-                      <h4 className="text-lg font-bold text-gray-800 mb-2">
+                      <h4 className="font-medium text-gray-900 mb-1">
                         {edu.degree}
                       </h4>
-                      <div className="text-blue-600 font-semibold mb-2">
+                      <div className="text-gray-600 font-medium mb-2 text-sm">
                         {edu.institution}
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
                         <div className="flex items-center gap-1">
-                          <MapPin size={14} />
+                          <MapPin size={12} />
                           {edu.location}
                         </div>
                         <div className="flex items-center gap-1">
-                          <Calendar size={14} />
+                          <Calendar size={12} />
                           {edu.period}
                         </div>
                       </div>
-                      <div className="text-sm text-gray-500 mb-3">
+                      <div className="text-sm text-gray-500 mb-2">
                         GPA: {edu.gpa}
                       </div>
                       <p className="text-gray-600 text-sm leading-relaxed">
@@ -233,28 +216,22 @@ const Experience = () => {
 
               {/* Certifications */}
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl text-white">
-                    <Award size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800">Certifications</h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <Award size={20} className="text-gray-600" />
+                  <h3 className="text-lg font-medium text-gray-900">Certifications</h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {certifications.map((cert) => (
-                    <div key={cert.id} className="bg-white rounded-xl p-4 shadow-lg">
-                      <h4 className="font-bold text-gray-800 mb-1">
+                    <div key={cert.id} className="bg-gray-50 rounded-lg p-4 border">
+                      <h4 className="font-medium text-gray-900 mb-1">
                         {cert.name}
                       </h4>
-                      <div className="text-blue-600 text-sm font-semibold mb-1">
+                      <div className="text-gray-600 text-sm font-medium mb-1">
                         {cert.issuer}
                       </div>
-                      <div className="flex items-center justify-between text-xs text-gray-500">
-                        <span>{cert.date}</span>
-                        <span className="flex items-center gap-1">
-                          {cert.credential}
-                          <ExternalLink size={12} />
-                        </span>
+                      <div className="text-xs text-gray-500">
+                        {cert.date}
                       </div>
                     </div>
                   ))}
