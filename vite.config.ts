@@ -9,9 +9,5 @@ export default defineConfig({
       "@": path.resolve("./"), 
     },
   },
-  build: {
-            rollupOptions: {
-              external: ['@tsparticles/react'],}
-          ,
-}}
+  }
 );
