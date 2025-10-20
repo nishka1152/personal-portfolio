@@ -1,5 +1,8 @@
 import React from 'react';
+import { AuroraBackground } from "../components/ui/aurora-background.tsx";
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -10,7 +13,17 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-white">
+    <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
 
@@ -56,19 +69,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      
-      {/* Minimalist Arrow with Glow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <button 
-          onClick={scrollToNext}
-          className="group relative p-3 rounded-full bg-white/10 backdrop-blur-sm border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:scale-110"
-        >
-          <ChevronDown size={20} className="text-gray-600 group-hover:text-gray-800 transition-colors" />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </button>
-      </div>
-    </section>
+      </motion.div>
+      </AuroraBackground>
   );
 };
 

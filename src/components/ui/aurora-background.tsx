@@ -33,13 +33,13 @@ export const AuroraBackground = ({
               "--white-gradient":
                 "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)",
 
-              "--blue-300": "#93c5fd",
-              "--blue-400": "#60a5fa",
-              "--blue-500": "#3b82f6",
-              "--indigo-300": "#a5b4fc",
-              "--violet-200": "#ddd6fe",
+              "--blue-300": "#1e4a7cff",
+              "--blue-400": "#183f6eff",
+              "--blue-500": "#091f43ff",
+              "--indigo-300": "#5468caff",
+              "--violet-200": "#ce4462ff",
               "--black": "#000",
-              "--white": "#fff",
+              "--white": "#ffffff",
               "--transparent": "transparent",
             } as React.CSSProperties
           }
