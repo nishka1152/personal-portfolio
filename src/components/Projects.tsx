@@ -5,39 +5,18 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment integration, inventory management, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
+      title: 'Resumatch',
+      description: 'A web app that semantically matches resumes to job descriptions using NLP and machine learning. \
+      It also includes keyword intent matching with SentenceTransformers and resume parsing with PyMuPDF.',
+      technologies: ['Python (Flask)', 'NLTK', 'SentenceTransformers', 'WordNet', 'PyMuPDF', 'HTML', 'CSS', 'Javascript'],
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['Vue.js', 'Socket.io', 'MongoDB', 'Express', 'Vuetify'],
-    },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API', 'CSS3'],
-    },
-    {
-      id: 4,
-      title: 'Mobile Banking App',
-      description: 'A secure mobile banking application with biometric authentication, transaction history, and real-time notifications.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Biometric Auth', 'Push Notifications'],
-    },
-    {
-      id: 5,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website with smooth animations, dark mode, and optimized performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript', 'Vercel'],
-    },
-    {
-      id: 6,
-      title: 'API Gateway Service',
-      description: 'A microservices API gateway with authentication, rate limiting, and request routing capabilities.',
-      technologies: ['Node.js', 'Express', 'Redis', 'JWT', 'Docker', 'AWS'],
+      title: 'Mazdoor Sahay',
+      description: 'A multilingual platform that connects migrant workers with nearby job opportunities across India.\
+      It features an AI-powered recommendation system that suggests relevant job categories based on skills of \
+      users and location for a more accessible and personalized experience.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'MySQL', 'Python (scikit-learn)+Flask', 'Google Sheets API'],
     },
   ];
 
