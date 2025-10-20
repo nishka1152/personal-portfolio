@@ -39,7 +39,7 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-medium text-gray-900">
+          <div className="text-xl font-medium text-white-900 text-white">
             Nishka Jain
           </div>
 
@@ -49,20 +49,13 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
+                className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium text-white"
               >
                 {item.name}
               </button>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-600"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
 
         {/* Mobile Navigation */}

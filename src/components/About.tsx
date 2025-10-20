@@ -1,7 +1,11 @@
+import {Spotlight} from "../components/ui/spotlight-new";
+
 const About = () => {
 
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-16 bg-white-50">
+    <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+          <Spotlight />
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -26,6 +30,7 @@ const About = () => {
             </div>
         </div>
       </div>
+    </div>
     </section>
   );
 };
