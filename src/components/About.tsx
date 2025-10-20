@@ -1,4 +1,3 @@
-import {Spotlight} from "../components/ui/spotlight-new";
 
 const About = () => {
 
@@ -13,7 +12,7 @@ const About = () => {
           </h1>
             <div className="space-y-8 mt-8">
               <div>
-                <p className="font-normal text-neutral-300 text-center leading-relaxed mb-4">
+                <p className="font-inter text-neutral-300 text-center leading-relaxed mb-4 text-2xl">
                   Hi! I am a sophomore at UC Irvine who has been passionate about coding since eighth grade. 
                   What started as a simple curiosity turned into something I love doing every day. 
                   I enjoy experimenting with new languages like Java, Python, and C++, and 
