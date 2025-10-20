@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -13,25 +13,20 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center bg-white">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          {/* Profile Image Placeholder */}
-          <div className="w-24 h-24 mx-auto mb-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-2xl font-medium">
-            NJ
-          </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl font-mono font-medium">
+          <h1 className="text-4xl font-mono font-large">
             Nishka Jain
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg text-gray-600 mb-8">
-            Full Stack Developer & UI/UX Designer
+            Back-End Developer
           </p>
 
           {/* Description */}
           <p className="text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I create functional and user-centered digital experiences. 
-            Passionate about clean code and turning ideas into reality.
+            Hello, there! I am Nishka Jain. I am a second-year majoring in Computer Science at UC Irvine! Scroll on to learn more about me.
           </p>
 
           {/* Social Links */}
@@ -42,7 +37,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <Github size={20} />
+              <Github size={40} />
             </a>
             <a
               href="https://linkedin.com"
@@ -50,13 +45,13 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <Linkedin size={20} />
+              <Linkedin size={40} />
             </a>
             <a
               href="mailto:nishkajain15@gmail.com"
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <Mail size={20} />
+              <Mail size={40} />
             </a>
           </div>
         </div>
