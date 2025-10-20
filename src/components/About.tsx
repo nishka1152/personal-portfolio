@@ -3,21 +3,17 @@ import {Spotlight} from "../components/ui/spotlight-new";
 const About = () => {
 
   return (
-    <section id="about" className="py-16 bg-white-50">
+    <section id="about" className="py-16 bg-black text-white">
     <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-          <Spotlight />
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              About
-            </h2>
-          </div>
-
-            <div className="space-y-6">
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            About
+          </h1>
+            <div className="space-y-8 mt-8">
               <div>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="font-normal text-neutral-300 text-center leading-relaxed mb-4">
                   Hi! I am a sophomore at UC Irvine who has been passionate about coding since eighth grade. 
                   What started as a simple curiosity turned into something I love doing every day. 
                   I enjoy experimenting with new languages like Java, Python, and C++, and 
