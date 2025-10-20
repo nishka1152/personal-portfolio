@@ -19,7 +19,7 @@ const GlowingEffectDemo = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 bg-black dark:bg-gray-900">
+    <section id="experience" className="py-16 bg-black">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
