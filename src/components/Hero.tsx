@@ -34,20 +34,6 @@ const Hero = () => {
             Passionate about clean code and turning ideas into reality.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="bg-gray-900 text-white px-6 py-3 font-medium hover:bg-gray-800 transition-colors flex items-center gap-2">
-              <Download size={16} />
-              Download Resume
-            </button>
-            <button 
-              onClick={scrollToNext}
-              className="border border-gray-300 text-gray-700 px-6 py-3 font-medium hover:border-gray-400 transition-colors"
-            >
-              View My Work
-            </button>
-          </div>
-
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             <a
@@ -67,7 +53,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:nishka@example.com"
+              href="mailto:nishkajain15@gmail.com"
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
               <Mail size={20} />

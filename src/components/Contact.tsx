@@ -70,91 +70,15 @@ const Contact = () => {
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light text-gray-900 mb-4">
-              Get In Touch
+              Contact
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? I'd love to hear from you. 
-              Let's discuss how we can work together to bring your ideas to life.
-            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-medium text-gray-900 mb-4">
-                  Let's Connect
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  I'm always interested in new opportunities and exciting projects. 
-                  Whether you have a question, want to collaborate, or just want to say hi, 
-                  feel free to reach out!
-                </p>
-              </div>
 
-              {/* Contact Info Cards */}
-              <div className="space-y-3">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="flex items-center gap-3 p-3 bg-white rounded border hover:border-gray-300 transition-colors"
-                  >
-                    <div className="text-gray-600">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900 text-sm">
-                        {info.title}
-                      </div>
-                      <div className="text-gray-600 text-sm">
-                        {info.value}
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
 
-              {/* Social Links */}
-              <div>
-                <h4 className="font-medium text-gray-900 mb-3">
-                  Follow Me
-                </h4>
-                <div className="flex gap-3">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 bg-white rounded border text-gray-600 hover:border-gray-300 transition-colors"
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Availability Status */}
-              <div className="bg-white rounded border p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <h4 className="font-medium text-gray-900">
-                    Available for Work
-                  </h4>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  I'm currently available for freelance projects and full-time opportunities. 
-                  Let's discuss how I can help bring your vision to life.
-                </p>
-              </div>
-            </div>
 
             {/* Contact Form */}
             <div className="bg-white rounded border p-6">
-              <h3 className="text-xl font-medium text-gray-900 mb-6">
-                Send a Message
-              </h3>
 
               {isSubmitted ? (
                 <div className="text-center py-8">
@@ -181,7 +105,6 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-400 focus:border-gray-400 transition-colors"
-                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -196,26 +119,10 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-400 focus:border-gray-400 transition-colors"
-                        placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-400 focus:border-gray-400 transition-colors"
-                      placeholder="What's this about?"
-                    />
-                  </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
@@ -229,7 +136,6 @@ const Contact = () => {
                       required
                       rows={5}
                       className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-400 focus:border-gray-400 transition-colors resize-none"
-                      placeholder="Tell me about your project or just say hello..."
                     />
                   </div>
 
@@ -243,7 +149,7 @@ const Contact = () => {
                 </form>
               )}
             </div>
-          </div>
+
         </div>
       </div>
     </section>
