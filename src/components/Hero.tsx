@@ -19,7 +19,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+          <h1 className="text-4xl font-mono font-medium">
             Nishka Jain
           </h1>
 
@@ -62,10 +62,15 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      
+      {/* Minimalist Arrow with Glow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <button onClick={scrollToNext} className="text-gray-300 hover:text-gray-500 transition-colors">
-          <ChevronDown size={24} />
+        <button 
+          onClick={scrollToNext}
+          className="group relative p-3 rounded-full bg-white/10 backdrop-blur-sm border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:scale-110"
+        >
+          <ChevronDown size={20} className="text-gray-600 group-hover:text-gray-800 transition-colors" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button>
       </div>
     </section>

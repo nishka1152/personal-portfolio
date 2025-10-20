@@ -29,39 +29,6 @@ const Contact = () => {
     }, 3000);
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail size={16} />,
-      title: 'Email',
-      value: 'nishka@example.com',
-      link: 'mailto:nishka@example.com',
-    },
-    {
-      icon: <Phone size={16} />,
-      title: 'Phone',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210',
-    },
-    {
-      icon: <MapPin size={16} />,
-      title: 'Location',
-      value: 'Mumbai, India',
-      link: '#',
-    },
-  ];
-
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: <Github size={20} />,
-      url: 'https://github.com',
-    },
-    {
-      name: 'LinkedIn',
-      icon: <Linkedin size={20} />,
-      url: 'https://linkedin.com',
-    },
-  ];
 
   return (
     <section id="contact" className="py-16 bg-gray-50">

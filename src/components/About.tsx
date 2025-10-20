@@ -1,5 +1,3 @@
-
-
 const About = () => {
 
   return (
@@ -13,36 +11,19 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Image and Info */}
-            <div className="space-y-6">
-              {/* Profile Image */}
-              <div className="w-48 h-48 mx-auto rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 text-4xl font-medium">
-                NJ
-              </div>
-            </div>
-
-            {/* Right Column - Content */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-medium text-gray-900 mb-4">
-                  Passionate Developer & Designer
-                </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  I'm a creative and detail-oriented developer with a passion for building 
-                  exceptional digital experiences. With expertise in both frontend and backend 
-                  technologies, I love turning complex problems into simple, beautiful designs.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, contributing 
-                  to open-source projects, or sharing knowledge with the developer community. 
-                  I believe in continuous learning and staying up-to-date with the latest trends 
-                  in web development.
+                  Hi! I am a sophomore at UC Irvine who has been passionate about coding since eighth grade. 
+                  What started as a simple curiosity turned into something I love doing every day. 
+                  I enjoy experimenting with new languages like Java, Python, and C++, and 
+                  I am always looking for ways to challenge myself with new projects and technologies. 
+                  I am especially interested in exploring machine learning and artificial intelligence. 
+                  Right now, I am trying to dive deeper into front-end development to broaden my skills.
                 </p>
               </div>
 
             </div>
-          </div>
         </div>
       </div>
     </section>
