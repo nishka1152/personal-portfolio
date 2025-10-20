@@ -5,24 +5,19 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Innovations Inc.',
-      period: '2022 - Present',
-      description: 'Leading development of scalable web applications and mentoring junior developers. Implemented microservices architecture and improved system performance by 40%.',
+      title: 'Web Development Research Asssistant',
+      company: 'Design and Partnership Lab (Daplab), UC Irvine',
+      period: 'September 2025 -- Present',
+      description: 'Will be working as a part of the dev team of the Whole Child Analytics Project (WCAP)',
     },
     {
       id: 2,
-      title: 'Frontend Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2021 - 2022',
-      description: 'Developed responsive web applications and collaborated with design teams to create exceptional user experiences.',
-    },
-    {
-      id: 3,
-      title: 'Junior Web Developer',
-      company: 'StartupXYZ',
-      period: '2020 - 2021',
-      description: 'Started my professional journey building web applications and learning modern development practices.',
+      title: 'Head Coordinator -– Delhi-Based Education NGO',
+      company: 'IDIYA Non-Profit Organisation',
+      period: 'January 2021 -– July 2021',
+      description: 'As the head of a Delhi-based NGO called Shubhakshika, I led remote education support for 150+ underserved students\
+      during COVID-19 by coordinating learning schedules and digital resources. I also managed centralized data systems and communication\
+      for 70+ teachers and volunteers across multiple schools',
     },
   ];
 
