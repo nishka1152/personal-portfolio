@@ -4,7 +4,7 @@ const GlowingEffectDemo = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Web Development Research Assistant',
+      title: 'Software Engineer Research Assistant',
       company: 'Design and Partnership Lab (Daplab), UC Irvine',
       period: 'September 2025 -- Present',
       description: 'Will be working as a part of the dev team of the Whole Child Analytics Project (WCAP)',
