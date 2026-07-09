@@ -1,6 +1,6 @@
 export const LINKS = {
   github: "https://github.com/nishka1152",
-  linkedin: "https://linkedin.com/in/nishkaj",
+  linkedin: "https://www.linkedin.com/in/nishka-jain-96896034a",
   email: "mailto:nishkaj@uci.edu",
   emailPlain: "nishkaj@uci.edu",
   resume: "/resume.pdf",
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     description:
       "Full-stack web app built in under 36 hours at VenusHacks 2025 that semantically matches resumes to job descriptions — keyword intent matching with SentenceTransformers, resume parsing with PyMuPDF, and classification and scoring models trained on limited labeled data.",
     tech: ["Flask", "Python", "NLTK", "SentenceTransformers", "WordNet", "PyMuPDF"],
-    github: "[GITHUB_LINK]",
+    github: "https://github.com/nishka1152",
     note: "VenusHacks 2025 · 36-hour build",
   },
   {
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     description:
       "Multilingual platform connecting migrant workers to job opportunities across India — an accessible UI managing dynamic job listings via CMS with external data integrations, built and maintained over two and a half years.",
     tech: ["Wix CMS", "Velo", "Google Sheets"],
-    live: "[LIVE_LINK]",
+    live: "https://nishkajain152.wixsite.com/mazdoor-sahay",
     note: "Jan 2022 — Aug 2024",
   },
 ];
