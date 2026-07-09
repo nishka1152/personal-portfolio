@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#23232f"/>
+      <stop offset="100%" stop-color="#1a1a26"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <!-- abstract silhouette -->
+  <circle cx="200" cy="185" r="75" fill="#b7aee6" opacity="0.18"/>
+  <path d="M 90 500 Q 90 340 200 340 Q 310 340 310 500 Z" fill="#b7aee6" opacity="0.18"/>
+  <text x="200" y="270" font-family="Georgia, serif" font-style="italic" font-size="64" fill="#b7aee6" text-anchor="middle" opacity="0.85">nj</text>
+  <text x="200" y="465" font-family="ui-monospace, monospace" font-size="13" fill="#6f6f85" text-anchor="middle">photo coming soon</text>
+</svg>

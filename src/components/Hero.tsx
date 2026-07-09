@@ -30,11 +30,12 @@ const Hero = () => {
       />
 
       <motion.div
-        className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-16"
+        className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-16 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16"
         initial="hidden"
         animate="visible"
         variants={{ visible: { transition: reduced ? {} : { staggerChildren: 0.12, delayChildren: 0.1 } } }}
       >
+        <div>
         <motion.p
           variants={item}
           transition={{ duration: 0.8, ease: EASE }}
@@ -88,6 +89,28 @@ const Hero = () => {
             </a>
           ))}
         </motion.div>
+        </div>
+
+        {/* Portrait — replace public/portrait.svg with a real photo (or point src at /me.jpg) */}
+        <motion.figure
+          variants={item}
+          transition={{ duration: 0.9, ease: EASE }}
+          className="hidden lg:block"
+        >
+          <div className="relative w-[300px] xl:w-[340px] rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-[2rem] bg-accent-soft blur-2xl"
+            />
+            <img
+              src="/portrait.svg"
+              alt="Portrait of Nishka Jain"
+              width={340}
+              height={425}
+              className="relative rounded-3xl border border-line object-cover aspect-[4/5] w-full"
+            />
+          </div>
+        </motion.figure>
       </motion.div>
 
       <motion.a
