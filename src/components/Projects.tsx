@@ -1,56 +1,70 @@
-import React from "react";
-import { HoverEffect } from "../components/ui/hover-effect"; // adjust path based on where you saved it
+"use client";
+import { motion } from "motion/react";
+import { HoverEffect } from "../components/ui/hover-effect";
+import { SectionTitle } from "../components/ui/section-reveal";
 
-const HoverEffectDemo = () => {
+const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Resumatch",
+      title: "Prompt Evaluation Platform — DAPLab",
       description:
-        "A web app that semantically matches resumes to job descriptions using NLP and machine learning. It also includes keyword intent matching with SentenceTransformers and resume parsing with PyMuPDF.",
+        "A full-stack platform for evaluating LLM prompts at scale, built for research at UC Irvine's Design and Partnership Lab. Features automated LLM testing pipelines and Ollama-powered models that extract soft skills from student reflections, taken from research prototype to deployment.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Prisma ORM",
+        "Ollama",
+        "LLM Pipelines",
+        "PostgreSQL",
+      ],
+    },
+    {
+      id: 2,
+      title: "ResuMatch",
+      description:
+        "A full-stack web app built in under 36 hours at VenusHacks 2025 that semantically matches resumes to job descriptions using NLP and machine learning — keyword intent matching with SentenceTransformers, resume parsing with PyMuPDF, and classification models trained on limited labeled data.",
       technologies: [
         "Python (Flask)",
         "NLTK",
         "SentenceTransformers",
         "WordNet",
         "PyMuPDF",
-        "HTML",
-        "CSS",
+        "HTML/CSS",
         "JavaScript",
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "Mazdoor Sahay",
       description:
-        "A multilingual platform that connects migrant workers with nearby job opportunities across India. It features an AI-powered recommendation system that suggests relevant job categories based on skills and location for a more accessible experience.",
+        "A multilingual platform connecting migrant workers to job opportunities across India, with an accessible UI managing dynamic job listings and external data integrations. Built and maintained over two years to address a real community need.",
       technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "MySQL",
-        "Python (scikit-learn)+Flask",
-        "Google Sheets API",
+        "Wix CMS",
+        "Velo by Wix",
+        "Content Manager",
+        "Google Sheets",
       ],
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-black text-white">
+    <section id="projects" className="py-24 bg-black text-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-          Projects
-        </h2>
+        <SectionTitle>Projects</SectionTitle>
 
-        {/* Hover Effect Cards */}
-        <div className="max-w-5xl mx-auto px-8">
-            <HoverEffect items={projects} />
-        </div>
-        
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="max-w-5xl mx-auto px-2 md:px-8"
+        >
+          <HoverEffect items={projects} />
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default HoverEffectDemo;
+export default Projects;
