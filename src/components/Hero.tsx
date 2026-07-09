@@ -1,120 +1,112 @@
-"use client";
-import { motion } from "motion/react";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
-import { SparklesCore } from "../components/ui/sparkles";
-import { TypewriterEffect } from "../components/ui/typewriter-effect";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowUpRight, ArrowDown, FileText, Github, Linkedin, Mail } from "lucide-react";
+import { LINKS } from "@/lib/data";
+import { EASE } from "@/components/ui/reveal";
 
-const description = `Hello, there! I'm Nishka — a Computer Science student at UC Irvine building at the intersection of software engineering, AI, and cognitive science.`;
-
-const roles = [
-  { text: "Software", className: "text-indigo-400" },
-  { text: "Engineer", className: "text-indigo-400" },
-  { text: "·" },
-  { text: "AI" },
-  { text: "Researcher" },
-  { text: "·" },
-  { text: "Full-Stack", className: "text-sky-400" },
-  { text: "Developer", className: "text-sky-400" },
-];
-
-const socials = [
-  { href: "https://github.com/nishka1152", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com/in/nishkaj", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:nishkaj@uci.edu", icon: Mail, label: "Email" },
+const ctas = [
+  { label: "GitHub", href: LINKS.github, icon: Github },
+  { label: "LinkedIn", href: LINKS.linkedin, icon: Linkedin },
+  { label: "Email", href: LINKS.email, icon: Mail },
 ];
 
 const Hero = () => {
-  const scrollToNext = () => {
-    document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
+  const reduced = useReducedMotion();
+
+  const item = {
+    hidden: reduced ? {} : { opacity: 0, y: 24, filter: "blur(8px)" },
+    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
   };
 
   return (
-    <div
-      id="home"
-      className="min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden relative z-10 pt-24"
-    >
-      <motion.h1
-        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className="md:text-7xl text-4xl lg:text-9xl font-bold text-center text-white relative z-20"
-      >
-        Nishka Jain
-      </motion.h1>
+    <section id="top" className="relative min-h-svh flex flex-col justify-center overflow-hidden">
+      {/* Soft ambient glow — the only decorative background element */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(60rem 40rem at 70% 20%, oklch(0.32 0.06 292 / 22%), transparent 65%), radial-gradient(45rem 30rem at 15% 85%, oklch(0.3 0.05 260 / 16%), transparent 60%)",
+        }}
+      />
 
-      <div className="w-full max-w-[40rem] h-32 relative">
-        {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
-        <SparklesCore
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={1200}
-          className="w-full h-full z-10"
-          particleColor="#FFFFFF"
-        />
-
-        {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]" />
-      </div>
-
-      {/* Roles typewriter */}
-      <div className="text-center px-4 -mt-8">
-        <TypewriterEffect
-          words={roles}
-          className="text-base md:text-2xl font-medium"
-          cursorClassName="bg-indigo-500"
-        />
-      </div>
-
-      {/* Description */}
-      <div className="max-w-prose mx-auto text-center mt-8 px-6">
-        <TextGenerateEffect words={description} />
-      </div>
-
-      {/* Social Links */}
       <motion.div
+        className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-16"
         initial="hidden"
         animate="visible"
-        variants={{ visible: { transition: { staggerChildren: 0.15, delayChildren: 1.2 } } }}
-        className="flex justify-center space-x-6 mt-10"
+        variants={{ visible: { transition: reduced ? {} : { staggerChildren: 0.12, delayChildren: 0.1 } } }}
       >
-        {socials.map(({ href, icon: Icon, label }) => (
-          <motion.a
-            key={label}
-            href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
+        <motion.p
+          variants={item}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="font-mono text-sm text-accent mb-6"
+        >
+          UC Irvine · Computer Science · Class of 2028
+        </motion.p>
+
+        <motion.h1
+          variants={item}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] text-foreground"
+        >
+          Nishka
+          <br />
+          <span className="italic text-accent">Jain</span>
+        </motion.h1>
+
+        <motion.p
+          variants={item}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="mt-8 max-w-xl text-lg md:text-xl text-muted leading-relaxed"
+        >
+          Full-stack engineer <span className="text-foreground">×</span> AI/ML researcher — I ship
+          products end to end and study how language models mirror human decision-making.
+        </motion.p>
+
+        <motion.div
+          variants={item}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="mt-10 flex flex-wrap items-center gap-3"
+        >
+          <a
+            href={LINKS.resume}
+            target="_blank"
             rel="noopener noreferrer"
-            aria-label={label}
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            whileHover={{ scale: 1.2, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-white hover:text-indigo-400 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-accent text-background px-6 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            <Icon size={36} />
-          </motion.a>
-        ))}
+            <FileText size={16} aria-hidden="true" /> View Resume
+          </a>
+          {ctas.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 text-sm text-muted hover:text-foreground hover:border-accent/40 transition-colors"
+            >
+              <Icon size={16} aria-hidden="true" /> {label}
+              <ArrowUpRight size={13} className="opacity-50" aria-hidden="true" />
+            </a>
+          ))}
+        </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        onClick={scrollToNext}
+      <motion.a
+        href="#about"
         aria-label="Scroll to About"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="mt-16 mb-10 text-neutral-500 hover:text-white transition-colors"
+        transition={{ delay: reduced ? 0 : 1.4, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-faint hover:text-accent transition-colors"
       >
-        <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
-          <ChevronDown size={32} />
-        </motion.div>
-      </motion.button>
-    </div>
+        <motion.span
+          className="block"
+          animate={reduced ? undefined : { y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <ArrowDown size={20} aria-hidden="true" />
+        </motion.span>
+      </motion.a>
+    </section>
   );
 };
 

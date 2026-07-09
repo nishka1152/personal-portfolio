@@ -1,70 +1,62 @@
-"use client";
-import { motion } from "motion/react";
-import { HoverEffect } from "../components/ui/hover-effect";
-import { SectionTitle } from "../components/ui/section-reveal";
+import { ArrowUpRight, Github } from "lucide-react";
+import { Reveal, SectionHeading } from "@/components/ui/reveal";
+import { PROJECTS } from "@/lib/data";
 
-const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Prompt Evaluation Platform — DAPLab",
-      description:
-        "A full-stack platform for evaluating LLM prompts at scale, built for research at UC Irvine's Design and Partnership Lab. Features automated LLM testing pipelines and Ollama-powered models that extract soft skills from student reflections, taken from research prototype to deployment.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Prisma ORM",
-        "Ollama",
-        "LLM Pipelines",
-        "PostgreSQL",
-      ],
-    },
-    {
-      id: 2,
-      title: "ResuMatch",
-      description:
-        "A full-stack web app built in under 36 hours at VenusHacks 2025 that semantically matches resumes to job descriptions using NLP and machine learning — keyword intent matching with SentenceTransformers, resume parsing with PyMuPDF, and classification models trained on limited labeled data.",
-      technologies: [
-        "Python (Flask)",
-        "NLTK",
-        "SentenceTransformers",
-        "WordNet",
-        "PyMuPDF",
-        "HTML/CSS",
-        "JavaScript",
-      ],
-    },
-    {
-      id: 3,
-      title: "Mazdoor Sahay",
-      description:
-        "A multilingual platform connecting migrant workers to job opportunities across India, with an accessible UI managing dynamic job listings and external data integrations. Built and maintained over two years to address a real community need.",
-      technologies: [
-        "Wix CMS",
-        "Velo by Wix",
-        "Content Manager",
-        "Google Sheets",
-      ],
-    },
-  ];
+const Projects = () => (
+  <section id="projects" className="py-24 md:py-32">
+    <div className="mx-auto max-w-6xl px-6">
+      <SectionHeading index="03" title="Projects" />
 
-  return (
-    <section id="projects" className="py-24 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionTitle>Projects</SectionTitle>
+      <div className="grid md:grid-cols-2 gap-6">
+        {PROJECTS.map((p, i) => (
+          <Reveal key={p.title} delay={i * 0.1}>
+            <article className="group h-full rounded-2xl border border-line bg-surface p-7 md:p-9 flex flex-col transition-colors duration-300 hover:border-accent/40">
+              <p className="font-mono text-xs text-faint mb-5">{p.note}</p>
+              <h3 className="font-serif text-3xl md:text-4xl text-foreground">{p.title}</h3>
+              <p className="text-accent mt-2">{p.tagline}</p>
+              <p className="text-muted leading-relaxed mt-5 flex-1">{p.description}</p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="max-w-5xl mx-auto px-2 md:px-8"
-        >
-          <HoverEffect items={projects} />
-        </motion.div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="font-mono text-xs text-faint border border-line rounded-full px-3 py-1"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-7 pt-5 border-t border-line flex gap-5">
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
+                  >
+                    <Github size={15} aria-hidden="true" /> Code
+                    <ArrowUpRight size={13} className="opacity-50" aria-hidden="true" />
+                  </a>
+                )}
+                {p.live && (
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
+                  >
+                    Live site
+                    <ArrowUpRight size={13} className="opacity-50" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+            </article>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Projects;

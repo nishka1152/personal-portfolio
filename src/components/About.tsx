@@ -1,88 +1,46 @@
-"use client";
-import { motion } from "motion/react";
-import { GraduationCap, Award } from "lucide-react";
-import { Spotlight } from "../components/ui/spotlight-new";
-import { SectionReveal, SectionTitle } from "../components/ui/section-reveal";
+import { GraduationCap } from "lucide-react";
+import { Reveal, SectionHeading } from "@/components/ui/reveal";
 
-const skills = [
-  "Python", "TypeScript", "JavaScript", "C++", "Java", "SQL", "R",
-  "React", "Next.js", "Prisma ORM", "Tailwind CSS", "REST APIs",
-  "Flask", "Firebase", "Gemini API", "Ollama", "Git",
-];
+const About = () => (
+  <section id="about" className="py-24 md:py-32">
+    <div className="mx-auto max-w-6xl px-6">
+      <SectionHeading index="01" title="About" />
 
-const About = () => {
-  return (
-    <section id="about" className="py-24 bg-black text-white relative overflow-hidden">
-      <Spotlight />
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <SectionTitle>About</SectionTitle>
+      <div className="grid md:grid-cols-5 gap-10 md:gap-16">
+        <Reveal delay={0.1} className="md:col-span-3">
+          <p className="text-lg md:text-xl text-muted leading-relaxed">
+            I've been writing code since eighth grade, and the curiosity never wore off. Today it
+            splits into two threads I refuse to choose between:{" "}
+            <span className="text-foreground">building products</span> — architecting full-stack
+            platforms as a software lead at a research lab — and{" "}
+            <span className="text-foreground">doing research</span> — investigating how large
+            language models mirror human decision-making.
+          </p>
+          <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed">
+            I like the space where those threads cross: tools that make research move faster, and
+            research that makes tools smarter. I'm currently looking for{" "}
+            <span className="text-accent">Summer 2027 software engineering internships</span>{" "}
+            across backend, frontend, and full-stack.
+          </p>
+        </Reveal>
 
-          <SectionReveal delay={0.15}>
-            <p className="font-inter text-neutral-300 text-center leading-relaxed mt-10 text-lg md:text-xl">
-              I'm a Computer Science student at UC Irvine who has been passionate about
-              coding since eighth grade. Today that curiosity drives everything I do —
-              from architecting full-stack platforms as a Software Lead at a research lab,
-              to investigating how large language models mirror human decision-making.
-              I'm especially interested in machine learning and artificial intelligence
-              and their application to understanding cognitive processes, and I'm currently
-              looking for Summer 2027 software engineering internships.
-            </p>
-          </SectionReveal>
-
-          {/* Education card */}
-          <SectionReveal delay={0.25}>
-            <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-950/60 backdrop-blur p-6 md:p-8">
-              <div className="flex items-start gap-4">
-                <div className="rounded-lg border border-neutral-700 p-2 bg-neutral-900">
-                  <GraduationCap className="h-5 w-5 text-indigo-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white">
-                    University of California, Irvine
-                  </h3>
-                  <p className="text-neutral-300 mt-1">
-                    B.S. in Computer Science · Sept 2024 – June 2028
-                  </p>
-                  <p className="text-neutral-400 mt-2 flex items-center gap-2 text-sm">
-                    <Award className="h-4 w-4 text-sky-400" /> Cumulative GPA: 3.96
-                  </p>
-                  <p className="text-neutral-500 mt-3 text-sm leading-relaxed">
-                    Coursework: Intro to AI, Machine Learning & Data Mining, Design &
-                    Analysis of Algorithms, Data Structures & Algorithms, C/C++, Python,
-                    Computer Organization, Discrete Mathematics, Probability & Statistics
-                  </p>
-                </div>
-              </div>
+        <Reveal delay={0.2} className="md:col-span-2">
+          <div className="rounded-2xl border border-line bg-surface p-6 md:p-7">
+            <div className="flex items-center gap-3 mb-4">
+              <GraduationCap className="h-5 w-5 text-accent" aria-hidden="true" />
+              <h3 className="font-medium text-foreground">Education</h3>
             </div>
-          </SectionReveal>
-
-          {/* Skills */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
-            className="flex flex-wrap justify-center gap-3 mt-12"
-          >
-            {skills.map((skill) => (
-              <motion.span
-                key={skill}
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8, y: 10 },
-                  visible: { opacity: 1, scale: 1, y: 0 },
-                }}
-                whileHover={{ scale: 1.1, borderColor: "rgb(99 102 241)" }}
-                className="px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/70 text-neutral-300 text-sm cursor-default transition-colors"
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
+            <p className="text-foreground">University of California, Irvine</p>
+            <p className="text-muted text-sm mt-1">B.S. Computer Science · 2024 — 2028</p>
+            <div className="mt-4 pt-4 border-t border-line flex items-baseline gap-2">
+              <span className="font-serif text-3xl text-accent">3.96</span>
+              <span className="font-mono text-xs text-faint uppercase tracking-wider">GPA</span>
+            </div>
+          </div>
+        </Reveal>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;

@@ -1,66 +1,54 @@
-"use client";
-import { motion } from "motion/react";
-import { ExperienceItem } from './ui/glowing-effect-experience';
-import { SectionTitle } from './ui/section-reveal';
+import { Reveal, SectionHeading } from "@/components/ui/reveal";
+import { EXPERIENCE } from "@/lib/data";
 
-const Experience = () => {
-  const experiences = [
-    {
-      id: 1,
-      title: 'Lab Coordinator & Software Lead',
-      company: 'Design and Partnership Lab (DAPLab), UC Irvine',
-      period: 'September 2025 – Present',
-      description:
-        'Software Engineering Undergraduate Research Assistant, promoted to Lab Coordinator and Software Lead after one year. I architect and drive all lab software engineering projects from research to deployment, serving as the primary technical point of contact for research-driven initiatives under Dr. June Ahn. Engineered a full-stack prompt evaluation platform using Next.js, TypeScript, and Prisma ORM with automated LLM testing pipelines and Ollama-powered models to extract soft skills from student reflections, coordinating across AI, web, and UX teams to align engineering execution with research goals.',
-    },
-    {
-      id: 2,
-      title: 'Undergraduate Research Assistant (Computational Team)',
-      company: 'Computational Cognitive Neuroscience Lab, UC Irvine',
-      period: 'March 2026 – Present',
-      description:
-        'Investigating how large language models perform on contextual bandit tasks derived from human cognitive experiments, evaluating cross-model behavioral differences and alignment with human decision-making using reinforcement learning frameworks. Analyzing LLM performance with reference to the Centaur model by reformatting psychological tasks into LLM-interpretable inputs to assess human cognitive simulation, and engaging with research on patch foraging theory and reward-based decision-making through weekly journal clubs under Dr. Aaron Bornstein.',
-    },
-    {
-      id: 3,
-      title: 'Tech Team Member',
-      company: 'Google Developer Group on Campus at UCI',
-      period: 'April 2026 – Present',
-      description:
-        'Developing full-stack student-facing applications from the ground up using React and Python, integrating Google technologies including Firebase and Gemini APIs. Facilitate hands-on technical workshops on modern web development and software engineering, and help organize the Google Solution Challenge to build impactful software solutions addressing real-world community problems.',
-    },
-  ];
+const Experience = () => (
+  <section id="experience" className="py-24 md:py-32">
+    <div className="mx-auto max-w-6xl px-6">
+      <SectionHeading index="02" title="Experience" />
 
-  return (
-    <section id="experience" className="py-24 bg-black">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
-            <SectionTitle>Experience</SectionTitle>
-          </div>
-
-          <ul className="grid grid-cols-1 gap-8">
-            {experiences.map((exp, i) => (
-              <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 50, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-              >
-                <ExperienceItem
-                  title={exp.title}
-                  company={exp.company}
-                  period={exp.period}
-                  description={exp.description}
-                />
-              </motion.div>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-};
+      <ol className="space-y-16 md:space-y-20">
+        {EXPERIENCE.map((exp, i) => (
+          <li key={exp.role}>
+            <Reveal delay={i * 0.05}>
+              <article className="grid md:grid-cols-4 gap-4 md:gap-10">
+                <div className="md:col-span-1">
+                  <p className="font-mono text-sm text-faint">{exp.period}</p>
+                </div>
+                <div className="md:col-span-3 md:border-l md:border-line md:pl-10 relative">
+                  <span
+                    className="hidden md:block absolute -left-[3.5px] top-2 h-1.5 w-1.5 rounded-full bg-accent"
+                    aria-hidden="true"
+                  />
+                  <h3 className="font-serif text-2xl md:text-3xl text-foreground">{exp.role}</h3>
+                  <p className="text-muted mt-1">{exp.org}</p>
+                  <ul className="mt-5 space-y-3">
+                    {exp.bullets.map((b) => (
+                      <li key={b} className="flex gap-3 text-muted leading-relaxed">
+                        <span className="text-accent mt-[3px] select-none" aria-hidden="true">
+                          —
+                        </span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {exp.stack.map((t) => (
+                      <span
+                        key={t}
+                        className="font-mono text-xs text-faint border border-line rounded-full px-3 py-1"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+);
 
 export default Experience;
