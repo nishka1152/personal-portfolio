@@ -103,7 +103,7 @@ const Hero = () => {
               className="absolute -inset-4 rounded-[2rem] bg-accent-soft blur-2xl"
             />
             <img
-              src="/portrait.svg"
+              src="/me.svg"
               alt="Portrait of Nishka Jain"
               width={340}
               height={425}
