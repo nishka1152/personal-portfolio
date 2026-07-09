@@ -13,12 +13,11 @@ const About = () => {
             <div className="space-y-8 mt-8">
               <div>
                 <p className="font-inter text-neutral-300 text-center leading-relaxed mb-4 text-2xl">
-                  Hi! I am a sophomore at UC Irvine who has been passionate about coding since eighth grade. 
+                  Hi! I am a rising Junior at UC Irvine who has been passionate about coding since eighth grade. 
                   What started as a simple curiosity turned into something I love doing every day. 
                   I enjoy experimenting with new languages like Java, Python, and C++, and 
                   I am always looking for ways to challenge myself with new projects and technologies. 
-                  I am especially interested in exploring machine learning and artificial intelligence. 
-                  Right now, I am trying to dive deeper into front-end development to broaden my skills.
+                  I am especially interested in exploring machine learning and artificial intelligence and their application in understanding decision-making cognitive processes.
                 </p>
               </div>
 
