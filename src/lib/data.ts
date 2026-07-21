@@ -17,7 +17,7 @@ export interface ExperienceRole {
 
 export const EXPERIENCE: ExperienceRole[] = [
   {
-    role: "AI Team Intern",
+    role: "Software Engineering Intern",
     org: "GrapheneAI (Singapore)",
     location: "Bengaluru, India",
     period: "June 2026 — Aug 2026",
