@@ -9,12 +9,26 @@ export const LINKS = {
 export interface ExperienceRole {
   role: string;
   org: string;
+  location?: string;
   period: string;
   bullets: string[];
   stack: string[];
 }
 
 export const EXPERIENCE: ExperienceRole[] = [
+  {
+    role: "AI Team Intern",
+    org: "GrapheneAI (Singapore)",
+    location: "Bengaluru, India",
+    period: "June 2026 — Aug 2026",
+    bullets: [
+      "Built and maintained AI automation workflows across three Amazon product pipelines, integrating LLM-based agents into production systems — using LangFuse to trace and debug LLM calls end-to-end and LiteLLM to manage requests across multiple model providers.",
+      "Owned prompt engineering and evaluation for the team's LLM-facing features, using Promptfoo to systematically test prompt variations against real-world edge cases and improve reliability before pipelines went into production.",
+      "Designed and built a classification/scoring model to power a product-scoring feature, working through the full loop of defining evaluation criteria, iterating on features, and validating outputs against real product data — with a focus on interpretability, not just accuracy.",
+      "Worked at the intersection of traditional ML and modern LLM tooling, gaining hands-on experience with the practical tradeoffs of LLMs versus purpose-built ML models in production (cost, latency, reliability).",
+    ],
+    stack: ["LangFuse", "LiteLLM", "Promptfoo", "LLM Agents", "Prompt Engineering", "ML Scoring Models"],
+  },
   {
     role: "Lab Coordinator & Software Lead",
     org: "Design and Partnership Lab (DAPLab), UC Irvine",

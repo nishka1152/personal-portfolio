@@ -20,7 +20,10 @@ const Experience = () => (
                     aria-hidden="true"
                   />
                   <h3 className="font-serif text-2xl md:text-3xl text-foreground">{exp.role}</h3>
-                  <p className="text-muted mt-1">{exp.org}</p>
+                  <p className="text-muted mt-1">
+                    {exp.org}
+                    {exp.location && <span className="text-faint"> · {exp.location}</span>}
+                  </p>
                   <ul className="mt-5 space-y-3">
                     {exp.bullets.map((b) => (
                       <li key={b} className="flex gap-3 text-muted leading-relaxed">
