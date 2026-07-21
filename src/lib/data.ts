@@ -27,7 +27,7 @@ export const EXPERIENCE: ExperienceRole[] = [
       "Designed and built a classification/scoring model to power a product-scoring feature, working through the full loop of defining evaluation criteria, iterating on features, and validating outputs against real product data — with a focus on interpretability, not just accuracy.",
       "Worked at the intersection of traditional ML and modern LLM tooling, gaining hands-on experience with the practical tradeoffs of LLMs versus purpose-built ML models in production (cost, latency, reliability).",
     ],
-    stack: ["LangFuse", "LiteLLM", "Promptfoo", "LLM Agents", "Prompt Engineering", "ML Scoring Models"],
+    stack: ["LangFuse", "LiteLLM", "Promptfoo", "LLM Agents", "Prompt Engineering", "Microsoft Azure", "Supabase"],
   },
   {
     role: "Lab Coordinator & Software Lead",
